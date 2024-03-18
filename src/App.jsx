@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import Counter from './Components/Counter.jsx';
+import Child from './Components/Child.jsx';
 
 // import { useState } from 'react';
 // import  Siderbar from  "./Components/Siderbar.jsx";
@@ -19,6 +20,7 @@ function App() {
 //   ];
 const [value , setvalue ] = useState(1)
 const [name , setname ] = useState("")
+const [count , setcount] = useState(0);
 
 useEffect(()=>{
 console.log("testing1..")
@@ -69,6 +71,9 @@ useEffect(()=>{
          
       </div>
 
+      
+       <Child count={count} />
+        <button onClick={()=>{ setcount(count + 1)}}>Child  Inc </button>
 
     </>
   );
